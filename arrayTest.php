@@ -34,7 +34,9 @@
     //使用小数做key，会自动截取整数部分
     $arr2 = array("logo"=>"北京","hsp"=>123,4.5=>678);
     foreach($arr2 as $key=>$val){
+        //两种写法
         echo $key.'='.$val.'</br>';
+        echo "$key=$val</br>";
     }
 
     //没有指定下标，数组最大的下标往后加1
@@ -45,6 +47,25 @@
 
     //数组可以动态增长
     $arr4 = array(2,3);
-    $arr4[2] = 5;
-    echo $arr4[2];
+    $arr4[3] = 5;
+    echo $arr4[3]; //$arr4[2]未定义 Undefined offset: 2
+    echo '</br>';
+
+    $arr5[0] = 1;
+    $arr5[5] = 2;
+    echo count($arr5); //答案是2，不是6
+    echo '</br>';
+
+    //用unset销毁数组中的某个元素,索引不会重建
+    $arr6 = array(123,456,"hello",4,0,223,44);
+    echo '删除前第二个元素',$arr6[1].'</br>';
+    echo '删除前第三个元素',$arr6[2].'</br>';
+    unset($arr6[1]);
+    echo '删除后第二个元素',$arr6[1].'</br>';
+    echo '删除后第三个元素',$arr6[2].'</br>';
+
+    echo '</br>';
+    //数组运算
+    $arr7 = $arr5 + $arr6; //把$arr6的键值加到$arr5后面，对于相同的键值不会覆盖
+    var_dump($arr7);
 ?>
