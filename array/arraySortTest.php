@@ -5,7 +5,10 @@
  * Date: 2015/10/10
  * Time: 15:20
  */
-    $arr = array(-1,4,5,-10,56,10.2,-34);
+    $arr = array();
+    for($i = 0; $i < 50; $i++){
+        $arr[$i] = rand(-100,100);
+    }
 
     //冒泡排序
     function bubbleSort(&$arr){ //这里要传地址
@@ -59,9 +62,12 @@
         }
     }
 
+    //从效率上，冒泡<选择<插入. 快速排序法是用空间换取了时间
+    echo '排序前时间为'.date('Y-n-d G:i:s').'</br>';
     //bubbleSort($arr);
     //selectSort($arr);
     insertSort($arr);
+    echo '排序后时间为'.date('Y-n-d G:i:s').'</br>';
     print_r($arr);
 
 
