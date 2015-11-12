@@ -18,6 +18,21 @@
 
     $cat3 = $cat1;
     $cat3->age = 34;
-    echo $cat1->age;
+    echo $cat1->age; //34 这时cat1和cat3指向的是同一个地址
+
+    function test($c,&$var,$arr){
+        $c->age = 1;
+        $var = 'aa';
+        $arr[1] = 99;
+    }
+    $var = 'ab';
+    $arr = array(0,10);
+    test($cat1,$var,$arr);
+    /*
+     * 对象传入函数的时候，传入的是地址
+     * 其他基本类型传入函数的时候，默认传入的是值；但是可以加&传入地址
+     */
+    echo $cat1->age.'||'.$var.'||'.$arr[1];
+
 
 ?>
