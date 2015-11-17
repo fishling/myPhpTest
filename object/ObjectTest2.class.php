@@ -28,4 +28,9 @@ class ObjectTest2 {
     public function showInfo(){
         echo '</br>姓名='.$this->name.'；年龄='.$this->age;
     }
+
+    //析构函数，没有参数，用于释放资源，自动调用
+    public function __destruct(){
+        echo '</br>'.$this->name.'析构函数';
+    }
 }

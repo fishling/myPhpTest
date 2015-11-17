@@ -36,6 +36,12 @@
     echo $object1->age.'||'.$var.'||'.$arr[1];
     echo '</br>'.$object1->add(5,6);
 
+    //对象初始化时进入栈区，所以先创建的对象后被销毁。析构函数在程序结束或者对象成为垃圾对象（没有任何变量引用它）时会被调用
     $object4 = new ObjectTest2('小黑',7);
+    $object5 = new ObjectTest2('黑白',8);
     $object4->showInfo();
+    $object6 = new ObjectTest2('小白',7);
+    $object5->showInfo();
+    $object6->showInfo();
+    $object4 = null; //此时$object4为垃圾对象，析构函数立刻调用
 ?>
