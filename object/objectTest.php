@@ -6,6 +6,7 @@
  * Time: 13:19
  */
     require_once 'ObjectTest.class.php';
+    require_once 'ObjectTest2.class.php';
 
     $object1 = new ObjectTest();
     $object1->name = '小白';
@@ -35,4 +36,6 @@
     echo $object1->age.'||'.$var.'||'.$arr[1];
     echo '</br>'.$object1->add(5,6);
 
+    $object4 = new ObjectTest2('小黑',7);
+    $object4->showInfo();
 ?>
