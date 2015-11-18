@@ -4,6 +4,7 @@
  * User: fish
  * Date: 2015/11/18
  * Time: 15:59
+ * 封装
  */
 
 class ObjectTest3 {
