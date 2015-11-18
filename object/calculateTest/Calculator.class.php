@@ -5,7 +5,7 @@
  * Date: 2015/11/5
  * Time: 16:29
  */
-    require_once '../basic/constTest.php';
+    require_once '../../basic/constTest.php';
 
     class Calculator {
         function calculate($num1,$num2,$oper){
