@@ -4,6 +4,7 @@
  * User: fish
  * Date: 2015/11/16
  * Time: 17:36
+ * 构造函数、析构函数
  */
 
 class ObjectTest2 {
