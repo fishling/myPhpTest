@@ -4,6 +4,7 @@
  * User: fish
  * Date: 2015/11/17
  * Time: 15:40
+ * 全局变量，静态变量，静态方法
  */
 
     class Child {
