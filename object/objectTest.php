@@ -7,6 +7,7 @@
  */
     require_once 'ObjectTest.class.php';
     require_once 'ObjectTest2.class.php';
+    require_once 'ObjectTest3.class.php';
 
     $object1 = new ObjectTest();
     $object1->name = '小白';
@@ -44,4 +45,11 @@
     $object5->showInfo();
     $object6->showInfo();
     $object4 = null; //此时$object4为垃圾对象，析构函数立刻调用
+
+    $object7 = new ObjectTest3();
+    //采用__set,__get方式访问私有变量，但不推荐
+    //$object7->n1 = 'hello';
+    //采用普通set和get方法
+    //$object7->setN1("hello");
+    echo $object7->getN1();
 ?>
