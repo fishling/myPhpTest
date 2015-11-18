@@ -6,8 +6,8 @@
  * Time: 13:19
  */
     require_once 'ObjectTest.class.php';
-    require_once 'ObjectTest2.class.php';
-    require_once 'ObjectTest3.class.php';
+    require_once 'conAndDestruct/ObjectTest2.class.php';
+    require_once 'encap/ObjectTest3.class.php';
 
     $object1 = new ObjectTest();
     $object1->name = '小白';
@@ -50,6 +50,6 @@
     //采用__set,__get方式访问私有变量，但不推荐
     //$object7->n1 = 'hello';
     //采用普通set和get方法
-    //$object7->setN1("hello");
+    $object7->setN1("hello");
     echo $object7->getN1();
 ?>
