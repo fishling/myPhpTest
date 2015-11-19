@@ -8,6 +8,7 @@
     require_once 'ObjectTest.class.php';
     require_once 'conAndDestruct/ObjectTest2.class.php';
     require_once 'encap/ObjectTest3.class.php';
+    require_once 'overload/ObjectTest4.class.php';
 
     $object1 = new ObjectTest();
     $object1->name = '小白';
@@ -45,6 +46,7 @@
     $object5->showInfo();
     $object6->showInfo();
     $object4 = null; //此时$object4为垃圾对象，析构函数立刻调用
+    echo '</br>';
 
     $object7 = new ObjectTest3();
     //采用__set,__get方式访问私有变量，但不推荐
@@ -52,4 +54,8 @@
     //采用普通set和get方法
     $object7->setN1("hello");
     echo $object7->getN1();
+    echo '</br>';
+
+    $object8 = new ObjectTest4();
+    $object8->test(1,2); //当调用的方法不存在时，默认调用__call方法
 ?>
