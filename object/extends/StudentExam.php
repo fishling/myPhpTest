@@ -4,7 +4,7 @@
  * User: fish
  * Date: 2015/11/18
  * Time: 16:35
- * 继承
+ * 继承 抽象 接口
  */
     require_once 'PupilStudent.class.php';
     require_once 'SeniorStudent.class.php';
@@ -13,4 +13,6 @@
     $student2 = new SeniorStudent('大明',20,89);
     $student1->showInfo();
     echo $student2->exam();
+
+    $student1->playFootball();
 ?>

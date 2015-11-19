@@ -4,10 +4,10 @@
  * User: fish
  * Date: 2015/11/18
  * Time: 16:23
- * 继承
+ * 继承 抽象 接口
  */
 
-class Student {
+abstract class Student {
     private $name;
     private $age;
     private $grade;
@@ -27,6 +27,9 @@ class Student {
     public function exam(){
         return '学生'.$this->getName().'测验</br>';
     }
+
+    //抽象方法，在子类中实现
+    abstract function study();
 
     /**
      * @return mixed
