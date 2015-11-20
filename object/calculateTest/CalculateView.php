@@ -11,6 +11,15 @@
                     circuitAreaTable.style.display = "block";
                 }
             }
+
+            function check(){
+                var num1Val = document.getElementById("num1").value;
+                var num2Val = document.getElementById("num2").value;
+                if(isNaN(num1Val) || isNaN(num2Val)){
+                    alert("请输入数字");
+                    return false;
+                }
+            }
         </script>
     </head>
     <!-- 两种写法 -->
@@ -40,7 +49,7 @@
     </br-->
 
     </br>
-    <form action="CalculateWork.php" method="post">
+    <form action="CalculateWork.php" method="post" onsubmit="return check();">
         <input type="radio" name="doType" value="siZeYunSuan" onclick="selType('jisuan')">四则运算
         <input type="radio" name="doType" value="circuitAreaCal" onclick="selType('circuitArea')">计算圆形面积
 
