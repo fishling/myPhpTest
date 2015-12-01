@@ -11,7 +11,7 @@
     require_once 'MysqlTool.class.php';
 
     try{
-        $connection = new MysqlConnection("localhost", "root", "","test");
+        $connection = new MysqlTool("localhost", "root", "","test");
 
         //查询
         $sql = "select * from user;";

@@ -7,7 +7,7 @@
  * 操作数据库
  */
 
-class MysqlConnection {
+class MysqlTool {
     private $hostIp;
     private $username;
     private $password;
