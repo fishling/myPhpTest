@@ -51,7 +51,7 @@
         //新增
         /*$sql = "insert into user(name,password,email,age) values ('李佑希',md5(123456),'liyouxi@163.com',1)";
         $res = $connection->excute_dml($sql);
-        echo '成功更新'.$res.'条数据';*/
+        echo '成功更新'.$res.'条数据'.mysql_insert_id($connection->getConn());*/
 
         $connection->closeConnection();
     }catch(Exception $e){
