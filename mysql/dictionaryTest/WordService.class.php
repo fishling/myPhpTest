@@ -34,13 +34,12 @@ class WordService {
         $ch = $word->getCh();
         try {
             if(isset($en) && strlen($en) > 0){
-                $sql = "select ch_word from words where en_word = '".$en."'";
+                $sql = "select ch_word from words where en_word = '".$en."' limit 0,1";
                 $searchWord = $en;
             }else{
-                $sql = "select en_word from words where ch_word = '".$ch."'";
+                $sql = "select en_word from words where ch_word like '%".$ch."%'";
                 $searchWord = $ch;
             }
-            $sql = $sql." limit 0,1";
 
             $connection = new MysqlTool("localhost", "root", "","test");
             $res = $connection->excute_dql($sql);
@@ -48,8 +47,10 @@ class WordService {
             $connection->closeConnection();
             if($rows > 0) {
                 if($isEcho) {
-                    $row = mysql_fetch_row($res);
-                    echo "$searchWord : $row[0]";
+                    echo "$searchWord : ";
+                    while($row=mysql_fetch_row($res)) {
+                        echo "$row[0] ";
+                    }
 
                     echo '</br>';
                 }
