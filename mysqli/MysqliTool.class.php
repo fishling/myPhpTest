@@ -22,7 +22,8 @@ class MysqliTool {
         if($this->conn->connect_error ){
             throw new Exception("连接失败".iconv("utf-8","gb2312",$this->conn->connect_error));
         }
-        $this->conn->set_charset('utf8');
+        //$this->conn->set_charset('utf8');
+        $this->conn->query("set names utf8");
     }
 
     public function excute_dql($sql){
