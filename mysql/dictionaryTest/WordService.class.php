@@ -61,7 +61,10 @@ class WordService {
             }
             return false;
         }catch(Exception $e){
-            echo $e->getFile().'第'.$e->getLine().'行报错，信息为：'.$e->getMessage();
+            if($isEcho) {
+                echo $e->getFile().'第'.$e->getLine().'行报错，信息为：'.$e->getMessage();
+            }
+            throw $e;
         }
     }
 }
