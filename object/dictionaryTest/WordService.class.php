@@ -65,6 +65,9 @@ class WordService {
                 }
             }
         }
-        echo '这个单词还不存在';
+        if($isEcho) {
+            echo '这个单词还不存在';
+        }
+        return false;
     }
 }
