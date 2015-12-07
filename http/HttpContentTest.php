@@ -14,4 +14,18 @@
     /*if($_SERVER['REMOTE_ADDR'] == '::1'){
         header("Location:error.php");
     }*/
+
+    echo '</br></br>$_ENV:</br>';
+    foreach ($_ENV as $k=>$v) {
+        echo "$k=$v</br>";
+    }
+    echo '</br></br>$GLOBALS:</br>';
+    /*foreach ($GLOBALS as $k=>$v) {
+        echo "$k={</br>";
+        foreach ($v as $vk=>$vv){
+            echo "$vk=$vv</br>";
+        }
+        echo "}</br>";
+    }*/
+    print_r($GLOBALS);
 ?>
