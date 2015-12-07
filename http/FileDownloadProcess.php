@@ -8,7 +8,13 @@
  */
     require_once 'FileDownload.class.php';
 
-    $file_name_res = $_REQUEST['filename'];
+    //因为$_REQUEST方法可能会被篡改，所以不建议使用
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $file_name_res = $_POST['filename'];
+    }else if($_SERVER['REQUEST_METHOD'] == 'GET'){
+        $file_name_res = $_GET['filename'];
+    }
+    //$file_name_res = $_REQUEST['filename'];
     $file_path = "../resource/";
     //绝对路径
     //$_SERVER['DOCUMENT_ROOT'];
